@@ -1,0 +1,28 @@
+{
+  "origins": 25,
+  "destinations": 21,
+  "od_pairs": 525,
+  "destination_categories": {
+    "lt": 4,
+    "library": 3,
+    "canteen": 14
+  },
+  "status_counts": {
+    "routed": 461,
+    "unreachable": 64
+  },
+  "reachable_pairs": 461,
+  "visited_cells": 158,
+  "max_snap_m": 150.0,
+  "graph_nodes": 11004,
+  "directed_edges": 24114,
+  "pairing": "all dormitories x all destinations; equal OD weights; one shortest path per pair",
+  "metric": "network distance in EPSG:3414 metres; access connectors excluded",
+  "caveat": "OSM candidates and nearest-node access require review; counts are not observed footfall",
+  "input_sha256": {
+    "ntu_bbox.osm": "cb798938a9c804963540521f26f52dc4537ab262c878d33acbddd0b7d0a90091",
+    "campus.geojson": "25334502053b93b524294b9a41ba0707ae018842c502e4c3adbf173330af0f72",
+    "grid.geojson": "cc5b987e68c5a55093f16a2113f55263a699598c720d1fd242ff10bd9effa8b4"
+  },
+  "poi_selection": "automatic OSM node/way candidates; not entrance-verified"
+}
