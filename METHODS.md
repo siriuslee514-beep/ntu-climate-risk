@@ -11,3 +11,6 @@ For grid cell `i`, OSM walking line lengths are divided into `covered=yes`, `cov
 **Scenarios.** +1/+2°C adds to the same observed temperature timestamps. Rain ×1.1/×1.2 scales the same observed hourly event, without filling missing intervals or changing event timing; a configurable threshold counts qualifying sample hours after each scaling. Those threshold crossings are not future event-frequency projections. Shelter 25/50% lowers `L_eff` only in listed grid IDs. All variants preserve sample mask, grid and color scale. Proxy reduction is formula-driven and does not establish a measured temperature, health or economic benefit. A zero baseline produces an undefined percentage change. No drainage/terrain inputs support flood depth, flood probability or inundated-building counts. The 30-day observational sample is not a climatological normal or climate trend.
 
 **3D.** When available, OSM `height` is used. Otherwise OSM `building:levels × 3.2 m` is an explicit display assumption. Buildings with neither height source use a 10 m display height only for browsing. These geometries are not BIM and do not drive shadow, wind or flood calculations.
+# OSM 最短路径扩展
+
+新增网格路线经过次数：在缓存 OSM 节点拓扑上，以 EPSG:3414 米制路段长度运行 Dijkstra；对宿舍 × LT／图书馆／食堂的等权 OD 组合分别选一条最短路。同一路线在同一网格计一次，仅角点接触不计。候选点匹配距离、不可达 OD、分类计数和输入哈希均导出。定义、匹配假设和复核流程见 [ROUTING.md](ROUTING.md)。原有热暴露与遮棚情景指标未作修改。

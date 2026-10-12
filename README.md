@@ -40,6 +40,8 @@ python3.12 -m venv .venv
 
 ## 页面与产物
 
+- 新增 **Walking routes / 路线经过次数**：基于缓存 OSM 步行路网计算宿舍到 LT／图书馆／食堂的距离最短路径，统计每个网格被不同 OD 路线经过的次数。先运行 `python scripts/build_routes.py`；点位核对、算法定义和完整使用方法见 [ROUTING.md](ROUTING.md)。
+
 - `Overview / Campus map`：本地缓存的 OSM 建筑、步道、校区边界、S44 和 100 m 网格。地图底图默认关闭，矢量与静态回退图来自本地；可选 OSM 在线底图保留归属标注。
 - `Weather & Quality`：实际样本时间、各变量小时图与每日覆盖率。最新值显示缓存时间，并非实时。
 - `Scenario Explorer`：基于相同观测样本比较 +1/+2°C、降雨 ×1.1/×1.2 和指定网格遮棚改善敏感性情景；展示汇总指标、网格散点比较、两张同色标的 100 m 网格地图和降雨阈值分析，并可下载 JSON/CSV/GeoPackage。蓝框标识假设遮棚改善的网格。

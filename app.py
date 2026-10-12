@@ -155,7 +155,11 @@ unknown_share = grid["covered_unknown_m"].sum() / grid["walk_m"].sum()
 st.info(f"Observed mode · S44 {station.get('name', 'unknown')} ({date_min} to {date_max}, Asia/Singapore). "
         "Weather is one shared station background, not measured building temperatures. " + boundary_note)
 
-overview, weather_tab, scenarios, sources, buildings_3d = st.tabs(["Overview / Campus map", "Weather & Quality", "Scenario Explorer", "Sources & Methods", "3D buildings (experimental)"])
+overview, weather_tab, scenarios, sources, buildings_3d, routing_tab = st.tabs(["Overview / Campus map", "Weather & Quality", "Scenario Explorer", "Sources & Methods", "3D buildings (experimental)", "Walking routes / 路线经过次数"])
+
+with routing_tab:
+    from ntu_climate.routing_ui import render_routing
+    render_routing()
 
 with overview:
     h = heat_degree_hours(obs, cfg["temperature_threshold_c"], expected_days=meta["days"])
